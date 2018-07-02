@@ -1,7 +1,7 @@
 # Site settings
 title: Mr.Xu Blog
 SEOTitle: 许伦杰的博客 | Mr.Xu Blog
-header-img: img/home-bg.jpg
+header-img: img/The-Starry-Night.jpg
 email: xulunjie000@gmail.com
 description: "  | 许伦杰，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Mr.Xu许伦杰 的个人博客，与你一起发现更大的世界。"
 keyword: "许伦杰, Mr.Xu许伦杰, Mr.Xu,许伦杰的博客, Mr.Xu Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
@@ -68,7 +68,7 @@ netease_comment: false
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "写写代码，做做设计，<br>离开世界之前，一切都是过程"
-sidebar-avatar: /img/avatarme.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/vincent.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
