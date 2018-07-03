@@ -20,7 +20,9 @@ facebook_username:  Jack Xu
 #linkedin_username:  firstname-lastname-idxxxx
 wechat_username:  xulunjie
 
-
+# Support for LiveRe comments system.
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+livere_uid: MTAyMC8zNzc5Ni8xNDMyNw==
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
