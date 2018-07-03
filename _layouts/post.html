@@ -11,28 +11,16 @@
 		background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
 	}
 	
-	{
-		% if page.header-mask %
-	}
+	{% if page.header-mask %}
 	
 	header.intro-header .header-mask {
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		background: rgba(0,
-		0,
-		0,
-		{
-			{
-				page.header-mask
-			}
-		}
-		);
+		background: rgba(0,	0, 0, {{page.header-mask}});
 	}
 	
-	{
-		% endif %
-	}
+	{% endif %}
 </style>
 <header class="intro-header">
 	<div class="header-mask"></div>
@@ -45,7 +33,7 @@
 						<a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
 						{% endfor %}
 					</div>
-					<h1>{{ page.title }}</h1> {% comment %} always create a h2 for keeping the margin , Hux {% endcomment %} {% comment %} if page.subtitle {% endcomment %}
+					<h1>{{ page.title }}</h1> {% comment %} always create a h2 for keeping the margin , Mr.Xu {% endcomment %} {% comment %} if page.subtitle {% endcomment %}
 					<h2 class="subheading">{{ page.subtitle }}</h2> {% comment %} endif {% endcomment %}
 					<span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
 				</div>
@@ -84,7 +72,9 @@
 							<span>{{page.previous.title}}</span>
 						</a>
 					</li>
-					{% endif %} {% if page.next.url %}
+					{% endif %} 
+					
+					{% if page.next.url %}
 					<li class="next">
 						<a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
 							Next<br>
