@@ -1,6 +1,6 @@
 # Site settings
-title: Mr.Xu Blog
-SEOTitle: 许伦杰的博客 | Mr.Xu Blog
+title: Mr.Xu 
+SEOTitle: 许伦杰的博客 | Mr.Xu 
 header-img: img/The-Starry-Night.jpg
 email: xulunjie000@gmail.com
 description: "  | 许伦杰，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Mr.Xu许伦杰 的个人博客，与你一起发现更大的世界。"
@@ -74,7 +74,7 @@ netease_comment: false
 #ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 #ga_domain: huangxuan.me
 
-
+wechat-icon: /img/vincent.jpg
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
