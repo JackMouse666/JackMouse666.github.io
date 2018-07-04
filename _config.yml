@@ -12,7 +12,10 @@ baseurl: ""                             # for example, '/blog' if your blog host
 future: true
 
 #gitment 
-owner: JackMouse666
+#owner: JackMouse666
+
+# 开启评论
+comments: true
 
 #来必力
 #livere_uid: MTAyMC8zNzc5Ni8xNDMyNw==
@@ -57,7 +60,7 @@ kramdown:
 
 
 # Disqus settings
-#disqus_username: hux
+disqus_username: JackMouse
 
 # Netease settings
 netease_comment: false
