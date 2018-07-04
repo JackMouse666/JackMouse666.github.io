@@ -12,7 +12,10 @@ baseurl: ""                             # for example, '/blog' if your blog host
 future: true
 
 #gitment 
-owner: 'JackMouse666'
+owner: JackMouse666
+
+#来必力
+livere_uid: MTAyMC8zNzc5Ni8xNDMyNw==
 
 # SNS settings
 RSS: false
