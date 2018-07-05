@@ -173,17 +173,4 @@ volatile是Java虚拟机提供的轻量级的同步机制，是线程不安全�
 
 **原文链接：**[Java锁机制以及Java多线程、线程池](https://blog.csdn.net/a745233700/article/details/80806349)
 
-
-
- ---
-layout:     post
-author:     "Mr.Xu"
----
-
-> “And if you really want to see what people are, all you have to do is look. ”
-
-
-
-### ![wechat](/img/wechat_icon.jpg)
-
  

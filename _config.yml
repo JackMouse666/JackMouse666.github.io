@@ -1,5 +1,5 @@
 # Site settings
-title: Mr.Xu 
+title: Welcome to my secret life  
 SEOTitle: 许伦杰的博客 | Mr.Xu 
 header-img: img/The-Starry-Night.jpg
 email: xulunjie000@gmail.com
@@ -24,7 +24,7 @@ RSS: false
 zhihu_username:     xu-lun-jie-75
 github_username:    JackMouse666
 #twitter_username:   Mr.Xu
-facebook_username:  Jack Xu
+facebook_username:  jack.xu.50596013
 #linkedin_username:  firstname-lastname-idxxxx
 wechat_username:  xulunjie
 
@@ -78,7 +78,7 @@ wechat-icon: /img/vincent.jpg
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，<br>离开世界之前，一切都是过程"
+sidebar-about-description: "How many roads must a man walk down，<br>Before they call him a man"
 sidebar-avatar: /img/vincent.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
