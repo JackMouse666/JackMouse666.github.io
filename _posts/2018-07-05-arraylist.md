@@ -24,7 +24,7 @@ tags:
 
  这是一个实现了List接口的可变长度的数组。实现了list接口中的所有方法，允许存放所有的
  元素，包括null。除了实现list接口，还提供了操作数组长度的方法。
-（这个类和vector大致相当，除了它是线程不安全的） */
+ （这个类和vector大致相当，除了它是线程不安全的） */
 ```
 
 - 要点：数组，可以存放重复的元素，包括null，非线程同步的。
@@ -37,7 +37,10 @@ tags:
  * run in linear time (roughly speaking).  The constant factor is low compared
  * to that for the <tt>LinkedList</tt> implementation.
  
-size(),isEmpty(),get(),set()方法使用的一个常量时间（也就是说这些操作与元素的个数无关，操作的时间为o(1)）。add操作花费恒定分摊时间，也就是说插入n的元素的时间为o（n），其实分摊之后，也就相当于插入一个元素的时间为o（1）。 粗略的来说本类的其他操作都能在线性的时间内完成。（也就是说这些操作与元素的个成线性关系，操作的时间复杂度o（n）。常数因子跟linkedlist相比是较低的。 */
+size(),isEmpty(),get(),set()方法使用的一个常量时间（也就是说这些操作与元素的个数无关，操作的时间为
+o(1)）。add操作花费恒定分摊时间，也就是说插入n的元素的时间为o（n），其实分摊之后，也就相当于插入一个元素
+的时间为o（1）。 粗略的来说本类的其他操作都能在线性的时间内完成。（也就是说这些操作与元素的个成线性关系，
+操作的时间复杂度o（n）。常数因子跟linkedlist相比是较低的。 */
 ```
 
 - 要点：底层为数组结构，相对于LinkedList效率较高。
@@ -50,7 +53,9 @@ size(),isEmpty(),get(),set()方法使用的一个常量时间（也就是说这�
  * specified beyond the fact that adding an element has constant amortized
  * time cost.
  
-每个ArrayList的实例对象都有一个容量（capacity）。这个容量就是这个list中用来存储元素的数组的大小。它至少和list的大小一样大。当有元素被增加到集合中时，它的容量会自动增加。除了要求添加一个元素的效率为“恒定分摊时间”，对于具体实现的细节没有特别的要求。
+每个ArrayList的实例对象都有一个容量（capacity）。这个容量就是这个list中用来存储元素的数组的大小。它至少
+和list的大小一样大。当有元素被增加到集合中时，它的容量会自动增加。除了要求添加一个元素的效率为“恒定分摊时
+间”，对于具体实现的细节没有特别的要求。
 
 
 <p>An application can increase the capacity of an <tt>ArrayList</tt> instance
@@ -72,7 +77,7 @@ size(),isEmpty(),get(),set()方法使用的一个常量时间（也就是说这�
  
 注意这个实现类是非同步的。如果有多个线程同时操作一个ArrayList的实例。
 然后，至少有一个线程修改了list的结构，就必须在外部保证它的线程同步。
-	
+
 结构修改指的是增加或者删除一个或多个映射；如果仅仅是更改已经存在的
 key和value值，不算做结构修改）。这通常需要在一个被封装好的list对象上，
 使用同步进行操作。
@@ -106,11 +111,17 @@ key和value值，不算做结构修改）。这通常需要在一个被封装好
  * time in the future.
  
 	
- * 该类的集合视图方法返回的迭代器是fail-fast机制的:在迭代器被创建后,如果list对象   被结构化修改后,无论在何时,使用何种方法(除了迭代器本身的remove方法)来修改它,都   会抛出ConcurrentModificationException.(也就是ArrayList的expectedModCount和   modCount对不上的时候会抛出上述异常.)因此,面对并发修改操作时,迭代器会迅   速且清晰地报错.而不是冒着在不确定的时间做不确定的操作的风险.	
+ * 该类的集合视图方法返回的迭代器是fail-fast机制的:在迭代器被创建后,如果list对象   被结构化修改后,无论
+ 在何时,使用何种方法(除了迭代器本身的remove方法)来修改它,都   会抛出ConcurrentModificationException.
+ (也就是ArrayList的expectedModCount和   modCount对不上的时候会抛出上述异常.)因此,面对并发修改操作时,
+ 迭代器会迅速且清晰地报错.而不是冒着在不确定的时间做不确定的操作的风险.	
  
 =======================fail-fast机制====================
-   “快速失败”也就是fail-fast，它是Java集合中的一种错误检测机制。某个线程在对collection进行迭代时，不允许其他线程对该collection进行结构上的修改。例如：
-   假设存在两个线程（线程1、线程2），线程1通过Iterator在遍历集合A中的元素，在某个时候线程2修改了集合A的结构（是结构上面的修改，而不是简单的修改集合元素的内容），那么这个时候程序就会抛出ConcurrentModificationException 异常，从而产生fail-fast。*/
+   “快速失败”也就是fail-fast，它是Java集合中的一种错误检测机制。某个线程在对collection进行迭代时，不允
+   许其他线程对该collection进行结构上的修改。例如：
+   假设存在两个线程（线程1、线程2），线程1通过Iterator在遍历集合A中的元素，在某个时候线程2修改了集合A的
+   结构（是结构上面的修改，而不是简单的修改集合元素的内容），那么这个时候程序就会抛出
+   ConcurrentModificationException 异常，从而产生fail-fast。*/
 ```
 
 -    要点：==========fail-fast机制=============
@@ -138,7 +149,8 @@ key和value值，不算做结构修改）。这通常需要在一个被封装好
  * exception for its correctness: <i>the fail-fast behavior of iterators
  * should be used only to detect bugs.</i>
  
-注意,迭代器的fail-fast行为是不能保证的.一般来说,保证非同步的同步操作是不太可能的.在最优基础上,Fail-fast迭代器会抛出ConcurrentModificationException.
+注意,迭代器的fail-fast行为是不能保证的.一般来说,保证非同步的同步操作是不太可能的.在最优基础上,Fail-fast
+迭代器会抛出ConcurrentModificationException.
 因此,写一个为了自身正确性而依赖于这个异常的程序是不对的.迭代器的fail-fast行为应该只是用来检测bug而已.*/
 ```
 
