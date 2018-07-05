@@ -13,37 +13,37 @@ tags:
 > “Man is not made for defeat .A man can be destroyed but not defeated！ ”
 
 ```java
-版本jdk1.8
+ //版本jdk1.8
 
- * Resizable-array implementation of the <tt>List</tt> interface.  Implements
+/** Resizable-array implementation of the <tt>List</tt> interface.  Implements
  * all optional list operations, and permits all elements, including
  * <tt>null</tt>.  In addition to implementing the <tt>List</tt> interface,
  * this class provides methods to manipulate the size of the array that is
  * used internally to store the list.  (This class is roughly equivalent to
  * <tt>Vector</tt>, except that it is unsynchronized.)
 
-这是一个实现了List接口的可变长度的数组。实现了list接口中的所有方法，允许存放所有的
-元素，包括null。除了实现list接口，还提供了操作数组长度的方法。
-（这个类和vector大致相当，除了它是线程不安全的）
+ 这是一个实现了List接口的可变长度的数组。实现了list接口中的所有方法，允许存放所有的
+ 元素，包括null。除了实现list接口，还提供了操作数组长度的方法。
+（这个类和vector大致相当，除了它是线程不安全的） */
 ```
 
 - 要点：数组，可以存放重复的元素，包括null，非线程同步的。
 
 ```java
-<p>The <tt>size</tt>, <tt>isEmpty</tt>, <tt>get</tt>, <tt>set</tt>,
+/**<p>The <tt>size</tt>, <tt>isEmpty</tt>, <tt>get</tt>, <tt>set</tt>,
  * <tt>iterator</tt>, and <tt>listIterator</tt> operations run in constant
  * time.  The <tt>add</tt> operation runs in <i>amortized constant time</i>,
  * that is, adding n elements requires O(n) time.  All of the other operations
  * run in linear time (roughly speaking).  The constant factor is low compared
  * to that for the <tt>LinkedList</tt> implementation.
  
-size(),isEmpty(),get(),set()方法使用的一个常量时间（也就是说这些操作与元素的个数无关，操作的时间为o(1)）。add操作花费恒定分摊时间，也就是说插入n的元素的时间为o（n），其实分摊之后，也就相当于插入一个元素的时间为o（1）。 粗略的来说本类的其他操作都能在线性的时间内完成。（也就是说这些操作与元素的个成线性关系，操作的时间复杂度o（n）。常数因子跟linkedlist相比是较低的。
+size(),isEmpty(),get(),set()方法使用的一个常量时间（也就是说这些操作与元素的个数无关，操作的时间为o(1)）。add操作花费恒定分摊时间，也就是说插入n的元素的时间为o（n），其实分摊之后，也就相当于插入一个元素的时间为o（1）。 粗略的来说本类的其他操作都能在线性的时间内完成。（也就是说这些操作与元素的个成线性关系，操作的时间复杂度o（n）。常数因子跟linkedlist相比是较低的。 */
 ```
 
 - 要点：底层为数组结构，相对于LinkedList效率较高。
 
 ```java
-<p>Each <tt>ArrayList</tt> instance has a <i>capacity</i>.  The capacity is
+/**<p>Each <tt>ArrayList</tt> instance has a <i>capacity</i>.  The capacity is
  * the size of the array used to store the elements in the list.  It is always
  * at least as large as the list size.  As elements are added to an ArrayList,
  * its capacity grows automatically.  The details of the growth policy are not
@@ -87,13 +87,13 @@ key和value值，不算做结构修改）。这通常需要在一个被封装好
 如果没有这样的对象存在，那么就需要使用Collections.synchronizedList方法来
 包装这个list对象，而且最好是在创建对象的时候就进行包装，这是为了预防
 对这个list对象进行一些线程不同步的操作。
-举个例子：List list = Collections.synchronizedList(new ArrayList(...));
+举个例子：List list = Collections.synchronizedList(new ArrayList(...)); */
 ```
 
 - 要点1：尽管有一个线程安全的类Vector和ArrayList结构类似，但是我们在需要保证线程安全时依然不会使用Vector这个类（过时的类），而是使用 Collections.synchronizedList（）方法来包装得到一个线程安全的list对象。
 
-```
- <p><a name="fail-fast">
+```java
+/** <p><a name="fail-fast">
  * The iterators returned by this class's {@link #iterator() iterator} and
  * {@link #listIterator(int) listIterator} methods are <em>fail-fast</em>:</a>
  * if the list is structurally modified at any time after the iterator is
@@ -110,7 +110,7 @@ key和value值，不算做结构修改）。这通常需要在一个被封装好
  
 =======================fail-fast机制====================
    “快速失败”也就是fail-fast，它是Java集合中的一种错误检测机制。某个线程在对collection进行迭代时，不允许其他线程对该collection进行结构上的修改。例如：
-   假设存在两个线程（线程1、线程2），线程1通过Iterator在遍历集合A中的元素，在某个时候线程2修改了集合A的结构（是结构上面的修改，而不是简单的修改集合元素的内容），那么这个时候程序就会抛出ConcurrentModificationException 异常，从而产生fail-fast。
+   假设存在两个线程（线程1、线程2），线程1通过Iterator在遍历集合A中的元素，在某个时候线程2修改了集合A的结构（是结构上面的修改，而不是简单的修改集合元素的内容），那么这个时候程序就会抛出ConcurrentModificationException 异常，从而产生fail-fast。*/
 ```
 
 -    要点：==========fail-fast机制=============
@@ -129,8 +129,8 @@ key和value值，不算做结构修改）。这通常需要在一个被封装好
 
 总结：我们在使用foreach循环时，不要使用add（）和remove（）方法来对集合进行结构上的更改，而是使用迭代器代替进行操作，不然会报并发线程修改异常的错。
 
-```
-<p>Note that the fail-fast behavior of an iterator cannot be guaranteed
+```java
+/*<p>Note that the fail-fast behavior of an iterator cannot be guaranteed
  * as it is, generally speaking, impossible to make any hard guarantees in the
  * presence of unsynchronized concurrent modification.  Fail-fast iterators
  * throw <tt>ConcurrentModificationException</tt> on a best-effort basis.
@@ -139,12 +139,12 @@ key和value值，不算做结构修改）。这通常需要在一个被封装好
  * should be used only to detect bugs.</i>
  
 注意,迭代器的fail-fast行为是不能保证的.一般来说,保证非同步的同步操作是不太可能的.在最优基础上,Fail-fast迭代器会抛出ConcurrentModificationException.
-因此,写一个为了自身正确性而依赖于这个异常的程序是不对的.迭代器的fail-fast行为应该只是用来检测bug而已.
+因此,写一个为了自身正确性而依赖于这个异常的程序是不对的.迭代器的fail-fast行为应该只是用来检测bug而已.*/
 ```
 
 - 要点：这意思就是说，要保证线程安全，还是老老实实使用Collections.synchronizedList（）来包装。
 
-```
+```java
 public class ArrayList<E> extends AbstractList<E>
         implements List<E>, RandomAccess, Cloneable, java.io.Serializable
 {
@@ -196,7 +196,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 - ArrayList构造方法
 
-```
+```java
   /**
      * Constructs an empty list with the specified initial capacity.
      *
@@ -254,7 +254,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 说明：将ArrayList的容量设置为当前size的大小。首先需要明确一个概念，ArrayList的size就是ArrayList的元素个数，length是ArrayList申请的内容空间长度。ArrayList每次都会预申请多一点空间，以便添加元素的时候不需要每次都进行扩容操作，例如我们的元素个数是10个，它申请的内存空间必定会大于10，即length>size，而这个方法就是把ArrayList的内存空间设置为size，去除没有用到的null值空间。这也就是我们为什么每次在获取数据长度是都是调用list.size()而不是list.length()。
 
-```
+```java
 /**
      * Trims the capacity of this <tt>ArrayList</tt> instance to be the
      * list's current size.  An application can use this operation to minimize
@@ -272,7 +272,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 - 扩容-ensureCapacity等方法
 
-```
+```java
     /**
      * Increases the capacity of this <tt>ArrayList</tt> instance, if
      * necessary, to ensure that it can hold at least the number of elements
