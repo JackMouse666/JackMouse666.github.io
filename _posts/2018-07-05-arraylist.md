@@ -2,7 +2,7 @@
 layout:     post
 title:      "集合知识点（一）之ArrayList"
 subtitle:   " \"ArrayList源码解析\""
-date:       2018-07-5 12:00:00
+date:       2018-07-05 12:00:00
 author:     "Mr.Xu"
 header-img: "img/u=821233265,3409953519&fm=27&gp=0.jpg"
 #catalog: true
