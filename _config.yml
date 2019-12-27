@@ -79,7 +79,7 @@ wechat-icon: /img/vincent.jpg
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "How many roads must a man walk down,Before they call him a man"
-sidebar-avatar: /img/a906c1bbacc0dedc296913b2917d182.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/微信图片_20191228020432.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
